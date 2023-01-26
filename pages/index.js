@@ -1,6 +1,32 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import Slider from '../comps/Slider';
+import styles from '../styles/Home.module.css';
+
+const images = ['/thaiPage.png', '/resumePage.png', '/iphonePage.png'];
+
+const titles = [
+  ['Thai List', 'Resume', 'Landing Page'],
+  ['Stack', 'Hurdles', 'Concept'],
+];
+
+const descriptions = [
+  [
+    'Nextjs, Strapi, Heroku, Javascipt, Xml, Css',
+    'Getting query syntax correct when filtering for id. Connecting with Strapi & Heroku. Coming up with an original idea for the app',
+    'A practical place to learn thai. Only most used words and phrases are listed. With break down meaning of each word,which many sites dont provide.',
+  ],
+  [
+    'Nextjs, Javascipt, Xml, Css',
+    'Creating polaroid slides. Making scroll snap into right section. Coming up with a minimal design',
+    'A simple yet unique resume, stand out colour palette. Only include essential content. Rule of 3 applied in navbar, slides, and sections',
+  ],
+  [
+    'Html, Css',
+    'Creating a navbar for the first time. Getting the background to blend and fit. Using iframe for the first time',
+    'A basic landing page. Blog like content. Easy to read',
+  ],
+];
 
 export default function Home() {
   return (
@@ -50,6 +76,9 @@ export default function Home() {
             </p>
           </a>
         </div>
+        <section className={styles.sliderSection}>
+          <Slider images={images} titles={titles} descriptions={descriptions} />
+        </section>
       </main>
 
       <footer className={styles.footer}>
@@ -65,5 +94,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
